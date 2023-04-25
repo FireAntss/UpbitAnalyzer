@@ -1,5 +1,4 @@
-# Upbit Analyzer
-![](./docs/src/UPbit_Logo.png){: width="100"}
+# <img src="./docs/src/UPbit_Logo.png" width="100px"> Analyzer
 
 > ⚠️ 현재 작성 중
 
@@ -10,7 +9,7 @@
 |:----:|:----:|:----:|
 |![](https://avatars.githubusercontent.com/u/122770678?v=4)|![](https://avatars.githubusercontent.com/u/122770694?v=4)|![](https://avatars.githubusercontent.com/u/122770896?v=4)|
 
-## Repository Constructure
+## Repository Directory Construction
 
 
 ## Upbit 코인 분석 도구
