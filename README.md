@@ -1,7 +1,17 @@
 # Upbit Analyzer
+![](./docs/src/UPbit_Logo.png){: width="100"}
+
 > ⚠️ 현재 작성 중
 
 - [프로젝트 개요](./docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B0%9C%EC%9A%94.md)
+
+### 🔥 Team
+|강유현|오세훈|조영일|
+|:----:|:----:|:----:|
+|![](https://avatars.githubusercontent.com/u/122770678?v=4)|![](https://avatars.githubusercontent.com/u/122770694?v=4)|![](https://avatars.githubusercontent.com/u/122770896?v=4)|
+
+## Repository Constructure
+
 
 ## Upbit 코인 분석 도구
 가상자산 시장에서 코인의 지표 데이터를 분석하여 가격을 예측하고 방향성(상승, 하락)에 대한 확률을 계산하여 퀀트 전략 알고리즘의 기본 토대를 만드는 것을 목표로 한다.
@@ -17,6 +27,8 @@
     - (opt) : 계좌 정보
 - 1시간, 4시간, 24시간 업 다운 예측
 ## Getting Started
+
+
 
 ## Licence
 <a rel="license" href="https://mit-license.org/"><img alt="MIT Licence 2023" style="border-width:0" src="https://img.shields.io/badge/license-MIT Licence -lightgrey" /></a><br/>
