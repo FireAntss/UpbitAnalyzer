@@ -5,7 +5,7 @@
 - [프로젝트 개요](./docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B0%9C%EC%9A%94.md)
 
 ---
-### <img src="/config/workspace/kassandra/docs/src/smiling-face-with-sunglasses_1f60e.png" width="24"> Team 
+### <img src="./docs/src/smiling-face-with-sunglasses_1f60e.png" width="24"> Team 
 |강유현|오세훈|조영일|
 |:----:|:----:|:----:|
 |![](https://avatars.githubusercontent.com/u/122770678?v=4)|![](https://avatars.githubusercontent.com/u/122770694?v=4)|![](https://avatars.githubusercontent.com/u/122770896?v=4)|
