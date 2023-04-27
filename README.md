@@ -1,14 +1,18 @@
 # <img src="./docs/src/UPbit_Logo.png" width="100px"> Analyzer <img src="./docs/src/rocket_1f680.png" width="32">
 test
-> ⚠️ 현재 작성 중
+> ⚠️ 현재 작성 중 입니다.
 
 - [프로젝트 개요](./docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B0%9C%EC%9A%94.md)
 
 ---
-### <img src="./docs/src/smiling-face-with-sunglasses_1f60e.png" width="24"> Team 
-|강유현|오세훈|조영일|
-|:----:|:----:|:----:|
-|![](https://avatars.githubusercontent.com/u/122770678?v=4)|![](https://avatars.githubusercontent.com/u/122770694?v=4)|![](https://avatars.githubusercontent.com/u/122770896?v=4)|
+<details>
+<summary><h2><img src="./docs/src/smiling-face-with-sunglasses_1f60e.png" width="24"> Team</h2></summary>
+<table width="80%">
+<tr><th>강유현</th><th>오세훈</th><th>조영일</th></tr>
+<tr align="center"><td>Team Leader/BE</td><td>DA/BE</td><td>FE/BE</td></tr>
+<tr><td><img src="https://avatars.githubusercontent.com/u/122770678?v=4"></td><td><img src="https://avatars.githubusercontent.com/u/122770694?v=4"></td><td><img src="https://avatars.githubusercontent.com/u/122770896?v=4"></td></tr>
+</table>
+</details>
 
 ## Repository Directory Construction
 ```bash
