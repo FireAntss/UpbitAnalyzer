@@ -23,10 +23,37 @@ test
 │   └── /src
 └── /FE
 ```
-- `/BE` : 백엔드
-- `/DA` : 데이터분석
+- `/BE` : 백엔드, 인증 및 권한 그리고 API 관련
+- `/DA` : 데이터 분석
 - `/docs` : 공유 문서
-- `/FE` : 프론트엔드
+- `/FE` : 프론트엔드, 사용자 입력 및 시각화 관련
+
+## 실행
+
+1. DA 서비스 실행
+```
+$ python app.py
+```
+2. BE 서비스 실행
+```
+$
+```
+3. FE 서비스 실행
+```
+$
+```
+
+## 세부사항
+
+- DA, `localhost:5000/api/prediction`
+    - HTTP 중에서 POST만 제공
+- BE, `localhost:8080/api/...`
+    - 권한(profile)
+    - 인증(login)
+    - API(user, history)
+    - ...
+- FE, `localhost:3000`
+    - ...
 
 ## <img src="./docs/src/UPbit_Logo.png" width="100px"> 코인 분석 도구
 가상자산 시장에서 코인의 지표 데이터를 분석하여 가격을 예측하고 방향성(상승, 하락)에 대한 확률을 계산하여 퀀트 전략 알고리즘의 기본 토대를 만드는 것을 목표로 한다.
