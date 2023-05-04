@@ -1,9 +1,11 @@
 package fireants.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,8 +22,7 @@ import lombok.ToString;
 @Entity
 public class Candle {
 	
-	@Id	
-	@Temporal(TemporalType.DATE)
+	@Id
 	private String candle_date_time_kst;
 	private String candle_date_time_utc;
 	private String market;
