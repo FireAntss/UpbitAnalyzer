@@ -35,7 +35,9 @@ public class Member {
 	private Long KRW;
 	private String coinType;
 	private Long coinNum;
-	private Long income;	
+	private Long income;
+	private String isUsed;
+	private String isDel;
 	//json ignore..
 	@OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
 	@JsonIgnore

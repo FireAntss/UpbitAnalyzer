@@ -7,27 +7,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import fireants.domain.Member;
 import fireants.domain.Trade;
 import fireants.service.MemberService;
 
-//@SessionAttributes("member") session 오류 발생
+//@SessionAttributes("member") //session 오류 발생
 @RestController
 public class MemberController {
 	
 	private final MemberService memberService;
-	
+		
 	@Autowired
 	public MemberController(MemberService memberService) {
 		this.memberService = memberService;
 	}
+	
+//	@ModelAttribute("member")
+//	public Member setMember() {
+//		return new Member();
+//	}
 	
 	@PostMapping("/api/users/newUser")
 	public Map<String, Object> newMember(@RequestBody Member member) {
@@ -35,13 +42,18 @@ public class MemberController {
 	}
 	
 	@PostMapping("/api/users/login")
-	public Map<String, Object> login(@RequestBody Member member, Model model) {
+	public void login(@RequestBody Member member, Model model) {
 //		if (memberService.login(member).get("status").equals("success")) {
 //			Member findMember = memberService.getmember(member);
-//			model.addAttribute("member", findMember);			
+//			model.addAttribute("member", findMember);
 //			return memberService.login(member);
 //		}
-		return memberService.login(member);
+//		return memberService.login(member);
+//		Map<String, Object> ret = memberService.login(member);
+//		if (ret.get("status").equals("success")) {			
+//			model.addAttribute("member", member);			
+//		}
+//		return ret;		
 	}
 	
 	@GetMapping("/api/users/logout")

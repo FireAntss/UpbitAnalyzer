@@ -47,7 +47,8 @@ public class MemberService {
 			Member findMember = memberRepo.findById(member.getUserId()).get();
 			if (findMember != null && findMember.getPassword().equals(member.getPassword())) {
 				map.put("status", "success");
-				map.put("message", "인증 성공");			
+				map.put("message", "인증 성공");
+				member.setRole(findMember.getRole());
 				return map;		
 			} else {
 				map.put("status", "fail");
