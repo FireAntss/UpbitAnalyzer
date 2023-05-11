@@ -1,6 +1,7 @@
 package fireants.BE.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
 import lombok.*;
 
 import javax.persistence.*;
