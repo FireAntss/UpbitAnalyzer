@@ -1,9 +1,9 @@
 # <img src="./docs/src/UPbit_Logo.png" width="100px"> Analyzer <img src="./docs/src/rocket_1f680.png" width="32">
-test
 > ⚠️ 현재 작성 중 입니다.
 
 - [프로젝트 개요](./docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B0%9C%EC%9A%94.md)
 - [전체 일정](https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6NO3S690jTnfTCiZB_MAGH-jBSA-ScnEENhPfQ8uZtSG5Jdo5vpDjM23-MLmRMgb7BkTrkATmnBN5/pubhtml)
+- [공유문서](https://docs.google.com/document/d/1Bt0cfzcVKcwxEbGj5aRHXapT-DvbQEuAQ8SBbd036y8/edit?usp=sharing)
 
 ---
 <details>
