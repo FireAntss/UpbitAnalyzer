@@ -17,13 +17,13 @@ public class Trade {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long transactionNum;
     @Temporal(TemporalType.DATE)
-    private Date transactionTime;
-    private String start;
-    private String end;
-    private Double volume;
-    private Double transactionUnitPrice;
-    private Double transactionPrice;
-    private Double fee;
+    private Date transactionTime;   // 현재시간
+    private String market;  // BTC, ETH
+    private String tradeType;   // buy/sell
+    private Double volume;  // 거래량
+    private Double transactionUnitPrice;    // 거래단가
+    private Double totalPrice;    // 거래액
+    private Double fee; // 수수료
 
 
     @ManyToOne

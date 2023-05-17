@@ -14,7 +14,28 @@ spring:
       dialect: org.hibernate.dialect.MySQL8InnoDBDialec
     defer-datasource-initialization: true
 
-jwt:
-  secret: fireants.kang.cho.ooh
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 911863023473-lvr2d6dspm7bogomf8e78rol2kq1nbjt.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
 
-
+#springdoc:
+#  swagger-ui:
+#    path: /swagger-ui.html
+#    groups-order: DESC
+#    operationsSorter: method
+#    disable-swagger-default-url: true
+#    display-request-duration: true
+#  api-docs:
+#    path: /api-docs
+#  show-actuator: true
+#  default-consumes-media-type: application/json
+#  default-produces-media-type: application/json
+#  paths-to-match:
+#    - /v1/**

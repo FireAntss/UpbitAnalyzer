@@ -2,46 +2,40 @@ package fireants.BE.controller;
 
 import fireants.BE.domain.User;
 import fireants.BE.service.UserService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/users")
-@RequiredArgsConstructor
 public class UserController {
 
-    private final UserService userService;
+    @Autowired
+    private UserService userService;
 
     @PostMapping("/join")
-    public ResponseEntity<String> join(@RequestBody User user) {
-        return ResponseEntity.ok().body(userService.join(user));
+    public String join(@RequestBody User user) {
+        return userService.join(user);
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody User user) {
-        return ResponseEntity.ok().body(userService.login(user));
+    @DeleteMapping("/delete") // 요청을 text로 username 넘겨줘야함
+    public String deleteMember(@RequestBody User user) {
+        return userService.deleteUser(user);
     }
 
-    @DeleteMapping("/{userName}")
-    public ResponseEntity<String> deleteMember(@PathVariable("userName") String userName) {
-        return ResponseEntity.ok().body(userService.deleteUser(userName));
+    @PutMapping("/update")
+    public String updateUser(@RequestBody User user) {
+        return userService.updateUser(user);
     }
 
-    @PutMapping("/{userName}")
-    public ResponseEntity<String> updateUser(@PathVariable("userName") String userName, @RequestBody User user) {
-        return ResponseEntity.ok().body(userService.updateUser(userName, user));
+    @PostMapping("/userInfo")
+    public User getUser(@RequestBody User user) {
+        return userService.getUser(user);
     }
 
-    @GetMapping("/{userName}/userInfo")
-    public ResponseEntity<User> getUser(@PathVariable("userName") String userName) {
-        return ResponseEntity.ok().body(userService.getUser(userName));
-    }
-
-    @GetMapping("/{userName}/tradeDetails")
-    public ResponseEntity<List> getTrade(@PathVariable("userName") String userName) {
-        return ResponseEntity.ok().body(userService.getTrade(userName));
+    @PostMapping("/tradeDetails")
+    public List getTrade(@RequestBody User user) {
+        return userService.getTrade(user);
     }
 }
