@@ -19,7 +19,7 @@ public class UserController {
         return userService.join(user);
     }
 
-    @DeleteMapping("/delete") // 요청을 text로 username 넘겨줘야함
+    @DeleteMapping("/delete")
     public String deleteMember(@RequestBody User user) {
         return userService.deleteUser(user);
     }
