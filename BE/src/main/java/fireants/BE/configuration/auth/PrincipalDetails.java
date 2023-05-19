@@ -2,6 +2,7 @@ package fireants.BE.configuration.auth;
 
 import fireants.BE.domain.User;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
@@ -23,9 +24,12 @@ public class PrincipalDetails implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Collection<GrantedAuthority> authorities = new ArrayList<>();
-        user.getRoleList().forEach(r -> {
-            authorities.add(() -> r);
-        });
+        String role = user.getRole();
+        authorities.add(new SimpleGrantedAuthority(role));
+
+//        user.getRoleList().forEach(r -> {
+//            authorities.add(() -> r);
+//        });
         return authorities;
     }
 

@@ -1,12 +1,10 @@
 package fireants.BE.service;
 
-import com.auth0.jwt.JWT;
-import com.auth0.jwt.algorithms.Algorithm;
-import fireants.BE.configuration.jwt.JwtProperties;
 import fireants.BE.domain.Trade;
 import fireants.BE.domain.User;
 import fireants.BE.repository.TradeRepository;
 import fireants.BE.repository.UserRepository;
+import fireants.BE.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,11 +20,9 @@ public class TradeService {
     @Autowired
     private TradeRepository tradeRepository;
 
-    public String buy(Trade trade, HttpServletRequest req) {
-        String authorization = req.getHeader("Authorization");
-        String jwtToken = authorization.replace("Bearer ", "");
-        String username = JWT.require(Algorithm.HMAC512(JwtProperties.SECRET)).build().verify(jwtToken).getClaim("username").asString();
+    public String buy(Trade trade, HttpServletRequest request) {
 
+        String username = JwtUtil.getUsernameByJwt(request);
         User user = userRepository.findByUsername(username);
 
         if (user == null)
@@ -44,11 +40,9 @@ public class TradeService {
         return "SUCCESS";
     }
 
-    public String sell(Trade trade, HttpServletRequest req) {
-        String authorization = req.getHeader("Authorization");
-        String jwtToken = authorization.replace("Bearer ", "");
-        String username = JWT.require(Algorithm.HMAC512(JwtProperties.SECRET)).build().verify(jwtToken).getClaim("username").asString();
+    public String sell(Trade trade, HttpServletRequest request) {
 
+        String username = JwtUtil.getUsernameByJwt(request);
         User user = userRepository.findByUsername(username);
 
         if (user == null)

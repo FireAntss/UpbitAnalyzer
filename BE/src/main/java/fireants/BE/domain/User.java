@@ -5,7 +5,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Entity
@@ -13,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString(exclude = {"trades", "account", "boards", "comments"})
 @Builder
 public class User {
 
@@ -23,19 +23,28 @@ public class User {
     private String password;
     private String nickname;
     private String role;
-    private Long KRW;
-    private String coinType;
-    private Long coinNum;
-    private Long income;
+    private String profile;
 
-    public List<String> getRoleList() {
-        if (this.role.length() > 0) {
-            return Arrays.asList(this.role.split(","));
-        }
-        return new ArrayList<>();
-    }
+//    public List<String> getRoleList() {
+//        if (this.role.length() > 0) {
+//            return Arrays.asList(this.role.split(","));
+//        }
+//        return new ArrayList<>();
+//    }
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Trade> trades = new ArrayList<>();
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
+    @JsonIgnore
+    private Account account;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Board> boards = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Comment> comments = new ArrayList<>();
 }

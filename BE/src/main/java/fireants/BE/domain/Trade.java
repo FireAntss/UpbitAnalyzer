@@ -10,12 +10,13 @@ import java.util.Date;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString(exclude = "user")
 @Builder
 public class Trade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long transactionNum;
+    private Long tradeId;
     @Temporal(TemporalType.DATE)
     private Date transactionTime;   // 현재시간
     private String market;  // BTC, ETH
