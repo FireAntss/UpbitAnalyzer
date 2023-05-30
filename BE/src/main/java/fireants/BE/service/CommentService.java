@@ -1,6 +1,5 @@
 package fireants.BE.service;
 
-import fireants.BE.domain.Board;
 import fireants.BE.domain.Comment;
 import fireants.BE.domain.User;
 import fireants.BE.repository.CommentRepository;
@@ -53,6 +52,18 @@ public class CommentService {
 
         Comment findComment = commentRepository.findById(comment.getCommentId()).get();
         commentRepository.delete(findComment);
+        return "SUCCESS";
+    }
+
+    public String update(Comment comment, HttpServletRequest request) {
+        if (!isCorrectUser(comment, request))
+            return "FAIL";
+
+        Comment findComment = commentRepository.findById(comment.getCommentId()).get();
+        findComment.setComment(comment.getComment());
+        findComment.setCreateDate(new Date());
+
+        commentRepository.save(findComment);
         return "SUCCESS";
     }
 }

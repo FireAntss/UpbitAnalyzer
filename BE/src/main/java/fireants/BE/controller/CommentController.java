@@ -30,4 +30,9 @@ public class CommentController {
     public String delete(@RequestBody Comment comment, HttpServletRequest request) {
         return commentService.delete(comment, request);
     }
+
+    @PutMapping("/update")
+    public String update(@RequestBody Comment comment, HttpServletRequest request) {
+        return commentService.update(comment, request);
+    }
 }
