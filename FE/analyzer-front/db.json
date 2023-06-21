@@ -1,0 +1,130 @@
+{
+  "user": [
+    {
+      "username": "admin",
+      "email": "creativehorn@naver.com",
+      "password": "1234",
+      "phone": "010-4916-8999",
+      "avatar": "https://source.boringavatars.com/beam/120/?colors=264653,2a9d8f,e9c46a,f4a261,e76f51",
+      "id": 1
+    },
+    {
+      "username": "young1ll",
+      "email": "goooglecho01@gmail.com",
+      "password": "1234",
+      "phone": "010-4916-8999",
+      "avatar": "https://source.boringavatars.com/beam/120/?colors=264653,2a9d8f,e9c46a,f4a261,e76f51",
+      "id": 2
+    },
+    {
+      "username": "test1",
+      "email": "creativehorn@naver.com",
+      "password": "1234",
+      "phone": "1234-1234-1234",
+      "avatar": "https://source.boringavatars.com/beam/120/?colors=#6d6d25,#f47326,#789bd7,#726c3d,#272ddb",
+      "id": 3
+    },
+    {
+      "username": "testAuth",
+      "email": "AuthTest01@gadfdf.com",
+      "password": "1234",
+      "phone": "010-2345-2134",
+      "avatar": "https://source.boringavatars.com/beam/120/?colors=#cc78d0,#65aaa6,#2af123,#72fd74,#6e74bc",
+      "id": 4
+    },
+    {
+      "username": "AuthTest",
+      "email": "dfdkjfasdlkfj@adflkja.com",
+      "password": "1111",
+      "phone": "asdlfkjadsf",
+      "avatar": "https://source.boringavatars.com/beam/120/?colors=#1152f8,#50bd77,#e98387,#d597d6,#c6be11",
+      "id": 5
+    },
+    {
+      "username": "register11",
+      "email": "test@test.com",
+      "password": "1234",
+      "phone": "12340-214334",
+      "avatar": "https://source.boringavatars.com/beam/120/?colors=#abded7,#d35da0,#fc1ffd,#9aabf1,#4e8f97",
+      "id": 6
+    },
+    {
+      "username": "pnusw50",
+      "email": "123@dflkjf.dom",
+      "password": "1212",
+      "phone": "010-2345-2134",
+      "avatar": "https://source.boringavatars.com/beam/120/?colors=#b84603,#9a7f84,#d87c45,#5f47f8,#a533e0",
+      "id": 7
+    }
+  ],
+  "account": [],
+  "trade": [],
+  "predict_btc": [],
+  "board": [
+    {
+      "id": 24,
+      "userId": 0,
+      "cnt": 1,
+      "content": "디스이즈 테스트 입니다.",
+      "writer": "Guest",
+      "createDate": "2023-06-13T03:06:00.529Z",
+      "like": 0
+    },
+    {
+      "content": "ㅣㅏㅓ",
+      "writer": "admin",
+      "createDate": "2023-06-20T22:37:16.739Z",
+      "like": 0,
+      "id": 25
+    },
+    {
+      "content": "로컬 스토리지 테스트...",
+      "writer": "admin",
+      "createDate": "2023-06-20T23:18:20.431Z",
+      "comment": 0,
+      "like": 0,
+      "id": 26
+    },
+    {
+      "content": "another profile check...",
+      "writer": "young1ll",
+      "createDate": "2023-06-20T23:19:41.764Z",
+      "comment": 0,
+      "like": 0,
+      "id": 27
+    },
+    {
+      "content": "what???",
+      "writer": "test1",
+      "createDate": "2023-06-21T02:52:20.936Z",
+      "comment": 0,
+      "like": 0,
+      "id": 28
+    },
+    {
+      "content": "테스트 어게인~",
+      "writer": "admin",
+      "createDate": "2023-06-21T03:59:03.042Z",
+      "comment": 0,
+      "like": 0,
+      "id": 29
+    },
+    {
+      "content": "와타시와 게스트다요",
+      "writer": "Guest",
+      "createDate": "2023-06-21T04:18:01.370Z",
+      "comment": 0,
+      "like": 0,
+      "id": 30
+    },
+    {
+      "content": "I'm just a guest",
+      "writer": "Guest",
+      "createDate": "2023-06-21T05:25:17.847Z",
+      "comment": 0,
+      "like": 0,
+      "id": 31
+    }
+  ],
+  "comment": []
+}
