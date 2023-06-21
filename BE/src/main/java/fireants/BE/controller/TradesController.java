@@ -18,12 +18,12 @@ public class TradesController {
     private TradeService tradeService;
 
     @PostMapping("/buy")
-    public String buy(@RequestBody Trade trade, HttpServletRequest req) {
-        return tradeService.buy(trade, req);
+    public String buy(@RequestBody Trade trade, HttpServletRequest request) {
+        return tradeService.buy(trade, request);
     }
 
     @PostMapping("/sell")
-    public String sell(@RequestBody Trade trade, HttpServletRequest req) {
-        return tradeService.buy(trade, req);
+    public String sell(@RequestBody Trade trade, HttpServletRequest request) {
+        return tradeService.buy(trade, request);
     }
 }

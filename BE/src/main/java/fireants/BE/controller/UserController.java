@@ -5,6 +5,7 @@ import fireants.BE.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -20,22 +21,22 @@ public class UserController {
     }
 
     @DeleteMapping("/delete")
-    public String deleteMember(@RequestBody User user) {
-        return userService.deleteUser(user);
+    public String deleteMember(HttpServletRequest request) {
+        return userService.deleteUser(request);
     }
 
     @PutMapping("/update")
-    public String updateUser(@RequestBody User user) {
-        return userService.updateUser(user);
+    public String updateUser(@RequestBody User user, HttpServletRequest request) {
+        return userService.updateUser(user, request);
     }
 
     @PostMapping("/userInfo")
-    public User getUser(@RequestBody User user) {
-        return userService.getUser(user);
+    public User getUser(HttpServletRequest request) {
+        return userService.getUser(request);
     }
 
     @PostMapping("/tradeDetails")
-    public List getTrade(@RequestBody User user) {
-        return userService.getTrade(user);
+    public List getTrade(HttpServletRequest request, @RequestParam String current) {
+        return userService.getTrade(request, current);
     }
 }

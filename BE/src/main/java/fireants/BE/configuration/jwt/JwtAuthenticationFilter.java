@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import fireants.BE.configuration.auth.PrincipalDetails;
 import fireants.BE.domain.User;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -22,6 +23,7 @@ import java.util.Date;
 // 스프링 시큐리티에서 UsernamePasswordAuthenticationFilter 가 있음
 // /login 요청해서 username,password 전송하면(post)
 // UsernamePasswordAuthenticationFilter 동작을 함. (formLogin().disable()때문에 작동안함)
+@Slf4j
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
@@ -30,7 +32,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     // /login 요청을 하면 로그인 시도를 위해서 실행되는 함수
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
-        System.out.println("JwtAuthenticationFilter : 로그인 시도중");
+        log.info("JwtAuthenticationFilter : 로그인 시도중");
 
         try {
             ObjectMapper om = new ObjectMapper();
@@ -45,7 +47,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             Authentication authentication = authenticationManager.authenticate(authenticationToken);
 
             PrincipalDetails principalDetails = (PrincipalDetails) authentication.getPrincipal();
-            System.out.println("로그인 완료됨 : "+principalDetails.getUser().getUsername()); // 로그인 정상적으로 되었다는 뜻
+            log.info("로그인 완료됨 : " + principalDetails.getUser().getUsername()); // 로그인 정상적으로 되었다는 뜻
 
             return authentication;
         } catch (IOException e) {
@@ -57,7 +59,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     // JWT 토큰을 만들어서 request요청한 사용자에게 JWT토큰을 response해주면 됨.
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
-        System.out.println("successfulAuthentication 실행 : 인증완료");
+        log.info("successfulAuthentication 실행 : 인증완료");
 
         PrincipalDetails principalDetails = (PrincipalDetails) authResult.getPrincipal();
 
