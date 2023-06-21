@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 // 4-2. (이메일,전화번호,이름,아이디) 쇼핑몰 -> (집주소)
 
 @Configuration
-@EnableWebSecurity(debug = true)
+@EnableWebSecurity
 public class SecurityConfig {
 
     @Autowired
