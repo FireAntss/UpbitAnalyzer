@@ -23,7 +23,10 @@ public class CorsConfig {
 //        config.addAllowedMethod("PUT");
 //        config.addAllowedMethod("DELETE");
 
+<<<<<<< HEAD
         
+=======
+>>>>>>> ad4faab8b54c8d9bde6aa18a42f9468acdad443a
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
     }
