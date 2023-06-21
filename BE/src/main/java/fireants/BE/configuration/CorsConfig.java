@@ -14,11 +14,17 @@ public class CorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("*");
+        config.addAllowedOrigin("http://localhost:3000");
         config.addAllowedHeader("*");
+        config.addAllowedHeader("Authorization");
+        config.addExposedHeader("Authorization");
         config.addAllowedMethod("*");
+//        config.addAllowedMethod("POST");
+//        config.addAllowedMethod("PUT");
+//        config.addAllowedMethod("DELETE");
 
-        source.registerCorsConfiguration("/api/**", config);
+        
+        source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
     }
 }
