@@ -20,7 +20,7 @@ const MypageItem = () => {
         <div className="user_box">
           <div className="profile">
             <div className="user_profile">
-              <img src={userStore.profile} alt="" />
+              <img src={userStore.user?.profile} alt="" />
               <button className="btn btn-outline-secondary">
                 <Image />
               </button>
@@ -28,7 +28,7 @@ const MypageItem = () => {
             <div className="userinfo">
               <div>
                 <span>{userStore.username}</span>
-                <span>{userStore.nickname}</span>
+                <span>{userStore.user?.nickname}</span>
               </div>
               <div>
                 <span>{userStore.account ? userStore.account : '-'}</span>

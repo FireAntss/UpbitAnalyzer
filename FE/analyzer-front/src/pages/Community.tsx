@@ -14,13 +14,21 @@ const Community = () => {
 
   const addFeed = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    let resObj = {
+      title: new Date().toISOString(),
+      userId: userStore.user?.id,
+      content: content,
+      writer: userStore.isAuthenticated ? userStore.username : 'Guest'
+      //createDate: new Date().toISOString(),
+      //comment: 0,
+      //like: 0
+    };
     try {
-      const request = await axios.post('http://localhost:8080/board', {
-        content: content,
-        writer: userStore.isAuthenticated ? userStore.username : 'Guest',
-        createDate: new Date().toISOString(),
-        comment: 0,
-        like: 0
+      const request = await axios.post('http://localhost:8080/api/v1/board/insert', resObj, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: userStore.accessKey
+        }
       });
       // 게시물 등록 성공
       console.log('게시물 등록 성공:', request.data);
@@ -52,7 +60,7 @@ const Community = () => {
 
   const fetchFeeds = useCallback(async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/board`);
+      const response = await axios.get(`http://localhost:8080/api/v1/board/getList`);
       const sortedFeeds = response.data.sort((a: any, b: any) => {
         return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
       });
@@ -74,8 +82,8 @@ const Community = () => {
               <label htmlFor="" className="from-control">
                 {userStore.isAuthenticated ? (
                   <div className="d-flex align-middle gap-2">
-                    <img src={userStore.profile} alt="" width={32} />
-                    <span>{userStore.username}</span>
+                    <img src={userStore.user?.profile} alt="" width={32} />
+                    <span>{userStore.user?.nickname}</span>
                   </div>
                 ) : (
                   <div className="d-flex align-middle gap-2">
@@ -105,8 +113,8 @@ const Community = () => {
         </div>
       </div>
       <div className="feedlist" style={{ overflow: 'auto' }}>
-        {visibleFeedList?.reverse().map((feed) => (
-          <FeedCard feed={feed} />
+        {visibleFeedList?.reverse().map((feed, i) => (
+          <FeedCard key={i} feed={feed} />
         ))}
       </div>
     </div>

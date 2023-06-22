@@ -9,6 +9,11 @@ const Overview = () => {
         <h4>Overview</h4>
       </div>
       <div className="page_cont">
+        <div className="form-control">
+          <label>
+            API Key: <input type="text" />
+          </label>
+        </div>
         <div className="account_first">
           <div className="account_box">
             <h4>My Account</h4>

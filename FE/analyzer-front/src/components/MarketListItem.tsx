@@ -1,10 +1,12 @@
 import React, { memo } from 'react';
 import { useCoinStore } from '@stores/CoinStore';
+import useWebSocketDetails from '@hooks/useWebsocket';
 
 const MarketListItem = memo(({ ticker }: { ticker: string }) => {
   const coinList = useCoinStore((state) => state.coinList);
 
   const coin = coinList.find((item) => item.market === ticker);
+
   const placeholderSpan = () => (
     <div className="placeholder-glow">
       <span className="placeholder col"></span>

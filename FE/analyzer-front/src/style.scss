@@ -103,6 +103,7 @@ body {
   }
 
   #App {
+    overflow-x: hidden;
     @for $num from 1 through 10 {
       .text#{$num} {
         font-weight: calc(#{$num} * 100);
@@ -541,6 +542,8 @@ body {
       }
 
       .card {
+        margin-top: 50px;
+        margin-bottom: 30px;
         .card-title {
           margin-bottom: 0;
         }

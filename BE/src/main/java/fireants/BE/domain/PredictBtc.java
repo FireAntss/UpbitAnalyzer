@@ -19,7 +19,8 @@ public class PredictBtc {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long seq;
     @Temporal(TemporalType.TIMESTAMP)
-    private Date dateday;
+    private Date tradeDate;
     private Float prediction;
+    private Float probability;
 
 }

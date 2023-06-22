@@ -30,11 +30,6 @@ const Navbar = () => {
                     커뮤니티
                   </Link>
                 </li>
-                <li>
-                  <Link className="flex-sm-fill text-sm-center nav-link" to={'/learn'}>
-                    학습
-                  </Link>
-                </li>
               </ul>
             </div>
             <div className="d-nav user-section">

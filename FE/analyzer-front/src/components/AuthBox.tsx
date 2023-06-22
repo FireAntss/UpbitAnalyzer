@@ -24,7 +24,6 @@ const AuthBox = () => {
           Authorization: store.accessKey
         }
       });
-      console.log(store.accessKey);
       store.setUser(response.data); // user 값을 업데이트
       console.log(store.user);
     } catch (error) {

@@ -3,7 +3,7 @@ import { useCandleStore } from '@stores/CoinStore';
 import { coinApi } from '@utils/API';
 import { curveMonotoneX, line, scaleLinear, scaleTime, select, timeParse } from 'd3';
 
-const SimpleChart = ({ ticker }: { ticker: string }) => {
+const SimpleChart = memo(({ ticker }: { ticker: string }) => {
   const graphRef = useRef<SVGSVGElement>(null);
   const { candles, setCandles } = useCandleStore();
 
@@ -98,6 +98,6 @@ const SimpleChart = ({ ticker }: { ticker: string }) => {
   };
 
   return <svg ref={graphRef} style={{ width: '100%' }} />;
-};
+});
 
 export default SimpleChart;

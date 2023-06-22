@@ -6,25 +6,29 @@ import React, { memo, useEffect, useState } from 'react';
 const OrderBook = ({ ticker }: { ticker: string }) => {
   const [orderbook, setOrderbook] = useState<any>([]);
   const [ticks, setTicks] = useState<any>([]);
-  const coinList = useCoinStore((state) => state.coinList);
-  const coinItem = coinList.find((i) => i.market == ticker);
 
+  const coinList = useCoinStore((state) => state.coinList);
+  const coinItem = coinList.find((i) => i.market === ticker);
+
+  const fetchCandleData = async () => {
+    try {
+      const resOderBook = await coinApi.getInitOrderbooks(ticker);
+      const resTicks = await coinApi.getOneCoinTradeLists(ticker);
+
+      setOrderbook(resOderBook.data[0]);
+      setTicks(resTicks.data);
+    } catch (error) {
+      console.error('Error fetching candle data:', error);
+    }
+  };
   useEffect(() => {
-    const fetchCandleData = async () => {
-      try {
-        const resOderBook = await coinApi.getInitOrderbooks(ticker);
-        const resTicks = await coinApi.getOneCoinTradeLists(ticker);
-        setOrderbook(resOderBook.data[0]);
-        setTicks(resTicks.data);
-      } catch (error) {
-        console.error('Error fetching candle data:', error);
-      }
-    };
-    fetchCandleData();
-    console.log(ticks);
-    const interval = setInterval(fetchCandleData, 1000);
-    return () => clearInterval(interval);
-  }, [ticker, setOrderbook]);
+    setInterval(fetchCandleData, 10000);
+  }, [ticker]);
+
+  if (!orderbook) {
+    return null;
+  }
+
   return orderbook ? (
     <table className="table table-hover orderbook">
       <thead>
