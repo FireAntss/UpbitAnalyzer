@@ -1,7 +1,16 @@
 # Back-End
 
-## 실행방법
-MySql8 계정: fireants 비밀번호:tiger 로 생성해놓을 것.
-```bash
-$ java -jar build/libs/BE-0.0.1-SNAPSHOT.jar
-```
+## API
+![api_predict](/images/api_predict.png)
+![api_trade](/images/api_trade.png)
+![api_login](/images/api_login.png)
+![api_users](/images/api_users.png)
+![api_board](/images/api_board.png)
+![api_comment](/images/api_comment.png)
+
+## DB
+### DB ERD
+![db_erd](/images/db_erd.png)
+
+### DB Tables
+![db_tables](/images/db_tables.png)

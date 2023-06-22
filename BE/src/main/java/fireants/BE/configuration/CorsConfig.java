@@ -16,6 +16,7 @@ public class CorsConfig {
         config.setAllowCredentials(true);
         config.addAllowedOrigin("http://localhost:3000");
         config.addAllowedHeader("*");
+        config.addExposedHeader("Authorization");
         config.addAllowedMethod("*");
 
         source.registerCorsConfiguration("/**", config);
