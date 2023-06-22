@@ -22,4 +22,8 @@ public class PredictBtc {
     private Date tradeDate;
     private Float prediction;
     private Float probability;
+<<<<<<< HEAD
+=======
+
+>>>>>>> a6ad1062c46bf99a55bebbf83e7a33568b508189
 }

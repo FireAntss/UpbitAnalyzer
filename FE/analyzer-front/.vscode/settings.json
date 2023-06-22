@@ -1,0 +1,13 @@
+{
+  //extension.list 실행
+  //cat extensions.list |% { code --install-extension $_}
+
+  "editor.fontSize": 14,
+  "debug.console.fontFamily": "D2Coding",
+  "editor.fontFamily": "D2Coding",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "git.autofetch": true,
+  "files.autoSave": "onFocusChange"
+}
