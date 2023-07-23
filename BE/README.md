@@ -1,4 +1,7 @@
 # Back-End
+- JDK17
+- SpringBoot 2.7.11
+- MySql 8.0
 
 ## API
 
